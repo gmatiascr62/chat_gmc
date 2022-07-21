@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body style="text-align: center ; background-color: aquamarine;">
+	
+
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+	$(document).ready(function() {
+		const socket = io.connect('http://192.168.1.37:5000');
+		socket.on('connect', function() {
+			socket.send('usuario conectado');
+		});
+		socket.on('message', function(data) {
+			$('#mensajes').append($('<p>').text(data));
+		});
+		$('#sendBtn').on('click', function() {
+			if ($('#mensaje').val() != "") {
+				if ($('#usuario').val() != "") {
+					socket.send($('#usuario').val()+": "+ $('#mensaje').val());
+					$('#mensaje').val('');
+				};
+			}; 
+		});
+	});
+
+    socket.on('connect', function() {
+    	socket.send('usuario conectado!');
+    });
+
+  </script>
+  <h1 style="font-size: 6rem; font: italic;">MENSAJES</h1>
+
+  <div id="mensajes" style="background-color: white ;margin-left: 20%; margin-right: 25%; border-radius: 20px;"></div>
+	<input type="text" id="usuario" placeholder="usuario" required>
+	<input type="text" id="mensaje" placeholder="mensaje" required>
+	<button id="sendBtn">Enviar</button>
+</body>
+</html>
