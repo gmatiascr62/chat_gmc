@@ -15,5 +15,5 @@ def handleMessage(msg):
     print('Message: ' + msg)
     send(msg, broadcast = True)
 
-if __name__ == "__main__":
-    app.run(debug=False)
+#if __name__ == "__main__":
+#    app.run(debug=False)
