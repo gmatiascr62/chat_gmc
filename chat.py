@@ -16,4 +16,4 @@ def handleMessage(msg):
     send(msg, broadcast = True)
 
 if __name__ == "__main__":
-    app.run(debug=False, host='52.41.36.82')
+    app.run(debug=False)
