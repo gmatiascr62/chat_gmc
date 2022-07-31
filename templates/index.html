@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no;user-scalable=0;"/>
     <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
   </head>
-  <body style="text-align: center ; background-color: aquamarine;">
+  <body>
 	
 
   <script
@@ -12,35 +14,18 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
   <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-	$(document).ready(function() {
-		const socket = io.connect();
-		socket.on('connect', function() {
-			socket.send('usuario conectado');
-		});
-		socket.on('message', function(data) {
-			$('#mensajes').append($('<p>').text(data));
-		});
-		$('#sendBtn').on('click', function() {
-			if ($('#mensaje').val() != "") {
-				if ($('#usuario').val() != "") {
-					socket.send($('#usuario').val()+": "+ $('#mensaje').val());
-					$('#mensaje').val('');
-				};
-			}; 
-		});
-	});
+  
 
-    socket.on('connect', function() {
-    	socket.send('usuario conectado!');
-    });
-
-  </script>
-  <h1 style="font-size: 6rem; font: italic;">MENSAJES</h1>
-
-  <div id="mensajes" style="background-color: white ;margin-left: 20%; margin-right: 25%; border-radius: 20px;"></div>
+  <h1 id="titulo">MENSAJES</h1>
+  <div id="remitente"></div>
+  <div id="texto"></div>
+  <div id="mensajes"></div>
 	<input type="text" id="usuario" placeholder="usuario" required>
+	<button id="u1">mati</button>
+	<button id="u2">tuky</button>
+	<button id="u3">chicha</button>
 	<input type="text" id="mensaje" placeholder="mensaje" required>
 	<button id="sendBtn">Enviar</button>
+<script src="{{url_for('static', filename='main.js')}}"></script>
 </body>
 </html>

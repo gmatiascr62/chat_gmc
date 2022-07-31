@@ -1,0 +1,22 @@
+aca esta todo sobre la base de datos:
+
+tabla Usuarios
+id, nombre, clave, amigos, eventos
+
+tabla chats
+id, origen, mensaje, destino
+
+tabla Usuarios detalle
+
+id(entero)
+nombre(str nombre de usuario)
+clave(str sin hash)
+amigos(str cada amigo se separa con _|_ hacer una funcion)
+eventos (str cada evento se separa con _|_ y hay tres tipos de eventos)
+
+
+tipos de eventos
+1-hay un mensaje sin leer, "1_nombre"
+2-tiene una solicitud de amistad, "2_nombre"
+
+en ambos casos no puede haber repetidos. 

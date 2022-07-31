@@ -1,0 +1,56 @@
+body {
+	text-align:center;
+	background-color: aquaMarine;
+}
+
+#titulo {
+	font-size:70px;
+	font: italic;
+}
+
+#remitente {
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-bottom: 2px;
+	font-size: 40px;
+	
+}
+
+#texto {
+	background-color: white;
+	margin-right: 12%;
+	margin-left: 12%;
+	margin-bottom: 4rem;
+	height: 25rem;
+	overflow: scroll;
+	border-radius: 10px;
+}
+
+#mensajes {
+	background-color: white;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.msgMio {
+	text-align: center;
+	background-color: powderBlue;
+	padding-left: 10px;
+	margin-left: 50%;
+	border-radius: 10px;
+	margin-right: 10px;
+	width: auto
+	height: auto;
+	word-wrap: break-word;
+}
+
+.msgOtro {
+	text-align: center;
+        background-color: lemonChiffon;
+        padding-left: 10px;
+        margin-right: 50%;
+        border-radius: 10px;
+        margin-left: 10px;
+	height: auto;
+	word-wrap: break-word;
+}
